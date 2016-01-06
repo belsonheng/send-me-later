@@ -1,0 +1,52 @@
+<head>
+  <title>Send Me Later :)</title>
+</head>
+
+<body>
+	<div class="container">
+	  <header>
+	  	<h1>Send me later :)</h1>
+	  	<h5>Write an email and schedule it to send at a later time.</h5>
+
+	  	{{> loginButtons }}
+
+	  	{{> form }}
+	  </header>
+	</div>
+</body>
+
+<template name="from">
+  <input type="email" name="from" class="form-control" value="{{email}}"/>
+</template>
+<template name="form">
+  <form id="new-email" class="new-email">
+    <table>
+  	  <tr>
+	      <td class="labels">From:</td>
+	      <td>{{> from}}</td>
+	  </tr>
+	  <tr>
+	  	  <td class="labels">To:</td>
+	  	  <td><input type="email" class="form-control" name="to"/></td>
+	  </tr>
+	  <tr>
+	  	  <td class="labels">Subject:</td>
+	  	  <td><input type="text" class="form-control" name="subject"/></td>
+	  </tr>
+	  <tr>
+	  	  <td class="labels" style="vertical-align: top;">Message:</td>
+	  	  <td><textarea name="message" class="form-control" rows="10"></textarea></td>
+	  </tr>
+	  <tr>
+	  	  <td class="labels">Send on:</td>
+	  	  <td>{{> datepicker}}</td>
+	  </tr>
+	  <tr>
+	  	  <td colspan="2" align="right" style="padding-top:1%"><button type="submit" class="btn btn-primary">Send Me Later</button></td>
+	  </tr>
+	</table>
+  </form>
+</template>
+<template name="datepicker">
+  <input type="date" id="date" name="date" class="form-control"/>
+</template>
